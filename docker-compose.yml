@@ -1,0 +1,13 @@
+version: '3.8'
+  services:
+    user-interface:
+      image: xena/xena-service-face #TODO: host built images on docker hub. Need a xena account.
+      container_name: xena-ui
+      networks: xena
+      logging:
+        driver: json-file
+        max-size: 10m
+
+networks:
+  xena:
+    driver: bridge
